@@ -1,0 +1,37 @@
+﻿.treeview ul,
+.treeview li
+{
+    list-style: none;
+}
+
+.treeview input ~ ul
+{
+    display: none;
+}
+
+.treeview input:checked + label::before {
+    background-position: 0 -16px;
+}
+
+.treeview input:checked:not(:disabled) ~ ul
+{
+    display: block;
+}
+
+.treeview input:checked + label::before
+{
+    background-position: 0 -16px;
+}
+
+.left-page
+{
+    width: 50%;
+    float: left;
+}
+
+.rigth-page
+{
+    width: 50%;
+    text-align: left;
+    float: right;
+}

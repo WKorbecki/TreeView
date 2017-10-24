@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin Panel</h2>
+
+@Html.ActionLink("Add", "Add", "Admin", null, new { @class = "btn btn-default" })
+@Html.ActionLink("Sign Out", "Signout", "Admin", null, new { @class = "btn btn-default" })

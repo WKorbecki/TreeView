@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    List<TreeView.Models.Tree> treeList = ViewBag.treeList;
+}
+
+<div class="treeview">
+    <ul>
+        @RenderTree(treeList, "item")
+    </ul>
+</div>
+
+@helper RenderTree(List<TreeView.Models.Tree> treeList, string id)
+{
+int count = 0;
+foreach (var tree in treeList)
+{
+    string tmp = id + "-" + count;
+    if (tree.Childs.Count == 0)
+    {
+            <li>
+                <label>@tree.Name</label>
+            </li>
+    }
+    else
+    {
+            <li>
+                <input type="checkbox" id="@tmp" checked> <label for="@tmp">@tree.Name</label>
+                <ul>
+                    @RenderTree(tree.Childs, tmp)
+                </ul>
+            </li>
+    }
+    count++;
+}
+}
